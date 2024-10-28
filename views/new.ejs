@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+<div class="container">
+    <div class="row">
+        <h2 style="text-align: center;">Create a new Campground</h3>
+            <div style="width: 30%; margin: auto;">
+                <form action="/campground" method="post">
+                    <input class="form-control" placeholder="name" type="text" name="name"><br>
+                    <input class="form-control" placeholder="image-url" type="text" ><br>
+                    <input class="form-control" placeholder="description" type="text" ><br>
+                    <button class="btn btn-lg btn-default w-100">Submit</button>
+                </form>
+            </div>
+        <a href="/campground">Go Back</a>
+    </div>
+</div>
+<%- include('partials/footer') %>

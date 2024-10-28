@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+<div class="container">
+    <div class="row">
+        <h2 style="text-align: center;">Sign up</h2> <!-- Corrected the closing tag for h2 -->
+        <div style="width: 30%; margin: auto;">
+            <form action="/login" method="post">
+                <input class="form-control" placeholder="name" type="text" name="username"><br> <!-- Use name="username" as it's needed for authentication -->
+                <input class="form-control" placeholder="password" type="password" name="password"><br> 
+                <button class="btn btn-lg btn-default w-100">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+<h4><%= currentUser ? currentUser.username : "Guest" %></h4>
+
+<div class="container"> 
+    <header class="bg-light p-5 mb-4 rounded">
+        <div class="container">
+            <h1>Welcome to YelpCamp</h1>
+            <p>views our hand-picked campground from all over the world</p>
+            <P>
+                <a class="btn btn-primary btn-large" href="/campground/new">Add new Campground</a>
+            </P>
+        </div>
+        <style>
+            .caption {
+                font-size: 16px;
+                font-weight: bold;
+                margin-top: 10px;
+                color: #333;
+            }
+        </style>
+    </header>
+
+<div class="row text-center" style:="display:flex; flex-wrap:wrap;">
+    <% campgrounds.forEach(function(campground){ %>
+        <div class="col-md-3  col-sm-6">
+            <div class="card" style="width: 18rem;">
+                <img src="<%= campground.image %>" class="card-img-top" alt="campground image" style:="height= 200px width=200px">
+                <div class="card-body">
+                  <h5 class="card-title"><%= campground.name %></h5>
+                  <p class="card-text"><%= campground.description %></p>
+                </div>
+                <p>
+                    <a href="/campground/<%= campground._id %>" class="btn btn-primary">More info</a>
+                </p>
+              </div>
+        </div>
+    <%})%>
+</div>
+
+
+<%- include('partials/footer') %>
